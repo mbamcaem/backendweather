@@ -14,12 +14,14 @@ namespace TestXtramile.Controllers
     [Route("api/[controller]")]
     public class WeatherController : Controller
     {
-        private HttpClient httpClient;
 
-        public WeatherController(HttpClient httpClient)
-        {
-            this.httpClient = httpClient;
-        }
+        // UNCOMMENT THIS IF YOU TO RUN UNIT TEST 
+
+        //private HttpClient httpClient;
+        //public WeatherController(HttpClient httpClient)
+        //{
+        //    this.httpClient = httpClient;
+        //}
 
         public async Task<IActionResult> CallAPI(string city)
         {
@@ -27,7 +29,7 @@ namespace TestXtramile.Controllers
             {
                 try
                 {
-                    client.BaseAddress = new Uri("http://api.openweathermap.org1");
+                    client.BaseAddress = new Uri("http://api.openweathermap.org");
 
                     using (HttpResponseMessage response = await client.GetAsync("data/2.5/weather?q=" + city + "&appid=96e778a0420464d6f8801bd84d8ed6a2"))
                     {
