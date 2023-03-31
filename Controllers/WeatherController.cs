@@ -37,7 +37,7 @@ namespace TestXtramile.Controllers
                         {
                             var formattedContent = JToken.Parse(responseContent).ToString(Formatting.Indented);
                             return Ok(formattedContent);
-                            //return BadRequest("Some thing went wrong in the request, please check the request Uri 123");
+                            //return BadRequest("Some thing went wrong in the request, please check the request Uri");
                         }
 
 
